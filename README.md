@@ -1,12 +1,12 @@
-# Getting-Connection-Info
+# domain_ssl_cert 
 
-**domain_inspect - Probes the domain to understand cert issuer and the expiry**
+**Probes the domain to understand cert issuer and the expiry**
 
 This simple python script makes an SSL connection to the domain name and checks for the Certificate issuer and Expiry.
 
-**Usage**: python domain_inspect.py list_of_domains.csv
+**Usage**: python domain_ssl_cert.py list_of_domains.csv
 <pre>
-$ python3 inspect_domain.py top-10.csv  | grep -v Error
+$ python3 domain_ssl_cert.py top-10.csv  | grep -v Error
 google.com, 2024/08/13, Google Trust Services LLC
 www.google.com, 2024/08/13, Google Trust Services LLC
 microsoft.com, 2025/05/06, Microsoft Corporation
