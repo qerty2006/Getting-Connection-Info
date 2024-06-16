@@ -97,7 +97,12 @@ if __name__ == "__main__":
 
             if isinstance(cert_details, dict):
                 not_after_date = convert_to_YYYY_MM_DD(cert_details["notAfter"])
-                issuer_organization = cert_details["issuer"][1][0][1]
+                issuer_organization = ""
+                if  isinstance(cert_details, dict):
+                  # code that looks through "issuer" to find the tuple with "organizationName" and prints the 2nd part of that tuple:
+                  for item in cert_details["issuer"]:
+                      if item[0][0] == "organizationName":
+                          issuer_organization = item[0][1]
                 writer.writerow([not_after_date, issuer_organization])
                 print(f"{website_url}, {not_after_date}, {issuer_organization}")
             else:
